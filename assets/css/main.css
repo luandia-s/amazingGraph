@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+header {
+    width: 100vw;
+    height: 10vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5rem;
+}
+
+header .brand {
+    text-decoration: none;
+    color: #D2872C;
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: all .5s;
+}
+
+header .brand:hover {
+    font-size: 1.4rem;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline-block;
+    width: 100%;
+    list-style: none;
+    cursor: pointer;
+    margin: .5rem;
+    padding: 10px 30px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 4px;
+    bottom: -5px;
+    left: 0;
+    background: #D2872C;
+    transition: all ease-in-out .5s;
+}
+
+nav ul li a:hover::after {
+    width: 70%;
+}
+
+nav ul li a {
+    position: relative;
+    width: 100%;
+    text-decoration: none;
+    color: #766F68;
+}
+
+.menu-toggle {
+    position: relative;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 4px;
+    border-radius: 10px;
+    background: #766F68;
+    margin-bottom: .2rem;
+}
+
+#toggle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    visibility: hidden;
+    /* display: none;     */
+}
+
+.container {
+    width: 100vw;
+    height: 90vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 3rem;
+}
+
+.content-container {
+    width: 40%;
+    display: block;
+    padding: 1rem;
+}
+
+.content-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+    color: #D2872C;
+}
+
+.content-container p {
+    font-size: 1.5rem;
+    color: #766F68;
+    margin-bottom: 2rem;
+}
+
+.content-container button {
+    width: 200px;
+    height: 60px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+
+    background: #D2872C;
+    color: #FFF;
+    transition: all ease-in-out .2s;
+}
+
+.content-container button:hover {
+    opacity: 0.7;
+}
+
+.bg-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 80%;
+    background-image: url('./../images/team.jpg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+
+@media ( max-width: 800px) {
+
+    header {
+        padding: 0 2.5rem;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .content-container {
+        width: 100%;
+        order: 1;
+    }
+
+    .content-container h1 {
+        font-size: 2.5rem;
+    }
+    
+    .content-container p {
+        font-size: 1.5rem;
+    }
+
+    .bg-img {
+        width: 90%;
+        order: 0;
+    }
+}
