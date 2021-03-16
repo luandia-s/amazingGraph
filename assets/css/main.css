@@ -198,7 +198,6 @@ nav ul li a {
     header nav {
         display: none;
         position: absolute;
-        display: flex;
         align-items: center;
         justify-content: center;
         width: 100vw;
@@ -212,6 +211,7 @@ nav ul li a {
     }
 
     header .navbar.active {
+        display: flex;
         animation: moveIn 2s forwards;    
     }
 
