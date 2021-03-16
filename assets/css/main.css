@@ -26,7 +26,6 @@
     100% {
         width: 0%;
         opacity: 0;
-        display: none;
     }
 }
 
@@ -55,6 +54,7 @@ header .brand:hover {
 
 nav ul {
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -110,6 +110,7 @@ nav ul li a {
 
 .menu-toggle h4 {
     font-size: 1rem;
+    color: #323435;
 }
 
 .container {
@@ -195,7 +196,7 @@ nav ul li a {
         padding: 0 2.5rem;
     }
 
-    header nav {
+    header .navbar {
         display: none;
         position: absolute;
         align-items: center;
@@ -216,7 +217,6 @@ nav ul li a {
     }
 
     header nav ul {
-        display: flex;
         flex-direction: column;
     }
 
