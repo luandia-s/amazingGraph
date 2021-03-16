@@ -7,6 +7,29 @@
     font-family: Poppins, sans-serif;
 }
 
+@keyframes moveIn {
+    0% {
+        width: 0%;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: .9;
+    }
+}
+
+@keyframes moveOut {
+    0% {
+        width: 100%;
+        opacity: .9;
+    }
+    100% {
+        width: 0%;
+        opacity: 0;
+        display: none;
+    }
+}
+
 header {
     width: 100vw;
     height: 10vh;
@@ -33,7 +56,6 @@ header .brand:hover {
 nav ul {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 nav ul li {
@@ -79,21 +101,15 @@ nav ul li a {
     cursor: pointer;
 }
 
-.menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 4px;
-    border-radius: 10px;
-    background: #766F68;
-    margin-bottom: .2rem;
-}
-
 #toggle {
     position: absolute;
     width: 50px;
     height: 50px;
-    visibility: hidden;
-    /* display: none;     */
+    opacity: 0;
+}
+
+.menu-toggle h4 {
+    font-size: 1rem;
 }
 
 .container {
@@ -109,7 +125,7 @@ nav ul li a {
 .content-container {
     width: 40%;
     display: block;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 .content-container h1 {
@@ -141,7 +157,7 @@ nav ul li a {
 }
 
 .content-container button:hover {
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .bg-img {
@@ -157,8 +173,23 @@ nav ul li a {
     z-index: -1;
 }
 
+@media(min-width: 850px) and (max-width: 1080px) {
 
-@media ( max-width: 800px) {
+    .content-container {
+        width: 100%;
+    }
+
+    .content-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .bg-img {
+        width: 100%;
+    }
+}
+
+
+@media ( max-width: 850px ) {
 
     header {
         padding: 0 2.5rem;
@@ -166,10 +197,39 @@ nav ul li a {
 
     header nav {
         display: none;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        background: #000;
+        right: 0;
+        top: 0;
+        
+        opacity: 0.9;
+        animation: moveOut 2s forwards;
+    }
+
+    header .navbar.active {
+        animation: moveIn 2s forwards;    
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header nav ul li a{
+        border-bottom: 4px solid #D2872C;
     }
 
     .menu-toggle {
         display: flex;
+    }
+
+    #toggle:checked~h4 {
+        color: rgb(218, 218, 218);
     }
 
     .container {
@@ -178,16 +238,21 @@ nav ul li a {
     }
 
     .content-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         width: 100%;
         order: 1;
     }
 
     .content-container h1 {
+        text-align: center;
         font-size: 2.5rem;
     }
     
     .content-container p {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .bg-img {
